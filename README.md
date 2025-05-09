@@ -1,2 +1,3 @@
-# atividade_lab_s202
-# atividade_lab_s202
+# Game Manager
+
+Uma aplicação pra gerenciar partidas, com features como: incluir jogadores, excluir, linkar partidas, etc.
