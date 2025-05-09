@@ -262,6 +262,12 @@ def main():
             status = "Venceu" if p_hist.get("e_vencedor") else ("Empate/Não finalizada" if p_hist.get("vencedor_id") is None else "Perdeu")
             print(f"- Partida {p_hist['id']}: {p_hist.get('pontuacao_jogador', 'N/A')} pontos ({status})")
 
+        print("\nTestando pra ver se o jogador 4 é o vencedor:")
+        historico_matue = gerenciador.buscar_historico_partidas_jogador(jogador4_id) 
+        for p_hist in historico_matue: 
+            status = "Venceu" if p_hist.get("e_vencedor") else ("Empate/Não finalizada" if p_hist.get("vencedor_id") is None else "Perdeu")
+            print(f"- Partida {p_hist['id']}: {p_hist.get('pontuacao_jogador', 'N/A')} pontos ({status})")
+
         print("\nTestando exclusão:")
         print(f"Excluindo jogador João (ID: {jogador2_id})...")
         gerenciador.excluir_jogador(jogador2_id)
