@@ -156,11 +156,6 @@ class GerenciadorPartidas:
         return partidas_list
     
     def excluir_partida(self, partida_id) -> bool:
-        query = """
-            MATCH (p:Partida {id: $id})
-            OPTIONAL MATCH (p)-[r]-() 
-            DELETE r, p
-            """
         query_detach = "MATCH (p:Partida {id: $id}) DETACH DELETE p"
         parameters = {"id": partida_id}
         self.db.execute_query(query_detach, parameters)
